@@ -1,7 +1,7 @@
 ## Local Setup
 1. Make sure your clickhouse server is running
 2. Run `cargo build` to install dependencies and build binaries.
-3. Run `./target/debug/clickhouse-rust-client` to create and seed the database.
+3. Run `cargo run` to create and seed the database.
 
 
 ### HTTP Interface
