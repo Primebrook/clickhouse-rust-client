@@ -13,7 +13,7 @@ curl https://clickhouse.com/ | sh
 
 # Rust Client
 1. Run `cargo build` to install dependencies and build binaries.
-2. 
+2. --
 
 
 ### HTTP Interface

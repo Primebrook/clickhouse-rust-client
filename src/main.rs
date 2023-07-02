@@ -1,5 +1,4 @@
-mod client;
-use client::Client;
+use clickhouse_connect::Client;
 use reqwest::Error;
 
 fn main() -> Result<(), Error> {
