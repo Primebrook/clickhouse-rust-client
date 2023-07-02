@@ -1,10 +1,12 @@
-use clickhouse_connect::Client;
+use clickhouse_connect::create_client;
 use reqwest::Error;
+// use serde::{Serialize, Deserialize};
+
 
 fn main() -> Result<(), Error> {
 
-    let client = Client::new("default".to_string(), "".to_string(), "localhost".to_string(), 8123);
-    let response_body = client.command("SELECT * FROM base_measures LIMIT 10");
+    let client = create_client("default", "", "localhost", 8123);
+    let response_body = client.command("SELECT choice FROM base_measures LIMIT 10");
 
     match response_body {
         Ok(body) => { println!("{}", body); }

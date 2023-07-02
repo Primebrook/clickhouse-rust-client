@@ -1,5 +1,13 @@
+mod structured_array;
+
 use reqwest::Error;
 use reqwest::blocking::Client as HTTPClient;
+use ndarray::Array2;
+pub use structured_array::StructuredArray;
+
+pub fn create_client(username: &str, password: &str, host: &str, port: u32) -> Client {
+    Client::new(username.to_string(), password.to_string(), host.to_string(), port)
+}
 
 pub struct Client {
     pub username: String,
@@ -16,7 +24,7 @@ impl Client {
     }
 
     pub fn command(&self, query: &str) -> Result<String, Error> {
-
+        // Doesn't care about response metadata
         let url = String::from(format!("http://{}:{}/?query={}", self.host, self.port, query));
 
         let response: Result<reqwest::blocking::Response, reqwest::Error> = self.http_client.get(&url)
@@ -31,5 +39,12 @@ impl Client {
                 Err(err)
             }
         }
+    }
+
+    pub fn query_ndarray(&self, _query: &str) -> Result<StructuredArray<f64>, Error> {
+        let values = vec![1., 2., 3., 4., 5., 6., 7., 8., 9.];
+        let data = Array2::from_shape_vec((3, 3), values).unwrap();
+        let column_names = vec!["col1".to_string(), "col2".to_string(), "col3".to_string()];
+        Ok(StructuredArray::new(data, column_names))
     }
 }
