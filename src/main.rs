@@ -9,7 +9,7 @@ fn main() -> Result<(), Error> {
 
     match response_body {
         Ok(body) => { println!("{}", body); }
-        Err(_) => { eprintln!("Error"); }
+        Err(_) => { eprintln!("Error parsing body"); }
     }
 
     Ok(())

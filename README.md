@@ -1,12 +1,19 @@
-A Rust client for the Clickhouse database
+A Rust client for ClickhouseDB
 
 # Setup
 ## Clickhouse DB
-1. Install Clickhouse
+1. Install Clickhouse: 
+```
+curl https://clickhouse.com/ | sh
+```
+2. Start the server:
+```
+./clickhouse server
+```
 
-# Running Rust Client
+# Rust Client
 1. Run `cargo build` to install dependencies and build binaries.
-2.
+2. 
 
 
 ### HTTP Interface

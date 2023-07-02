@@ -26,7 +26,10 @@ impl Client {
 
         match response {
             Ok(res) => { res.text() }
-            Err(err) => { Err(err) }
+            Err(err) => {
+                eprintln!("Error sending request");
+                Err(err)
+            }
         }
     }
 }
