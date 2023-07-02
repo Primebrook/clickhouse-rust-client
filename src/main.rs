@@ -2,8 +2,6 @@ mod client;
 use client::Client;
 use reqwest::Error;
 
-
-
 fn main() -> Result<(), Error> {
 
     let client = Client::new("default".to_string(), "".to_string(), "localhost".to_string(), 8123);
