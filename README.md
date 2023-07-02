@@ -1,7 +1,12 @@
-## Local Setup
-1. Make sure your clickhouse server is running
-2. Run `cargo build` to install dependencies and build binaries.
-3. Run `cargo run` to create and seed the database.
+A Rust client for the Clickhouse database
+
+# Setup
+## Clickhouse DB
+1. Install Clickhouse
+
+# Running Rust Client
+1. Run `cargo build` to install dependencies and build binaries.
+2.
 
 
 ### HTTP Interface
